@@ -20,7 +20,7 @@ subject_data <- rbind(subject_train, subject_test)
 
 features <- read.table("features.txt")
 
-
+mean_and_std_features <- grep("-(mean|std)\\(\\)", features[, 2])
 x_data <- x_data[, mean_and_std_features]
 
 names(x_data) <- features[mean_and_std_features, 2]
